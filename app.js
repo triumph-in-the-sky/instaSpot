@@ -1,6 +1,6 @@
 /*eslint-env node*/
 
-var requestHandlers = require('./requestHandlers');
+var requestHandlers = require('server/requestHandlers');
 
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
