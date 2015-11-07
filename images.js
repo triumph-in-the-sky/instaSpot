@@ -91,7 +91,7 @@ var images =
     city: "Berlin", 
     country: "Germany", 
     url: "http://i.telegraph.co.uk/multimedia/archive/02120/berlin-hotel620_2120546b.jpg", 
-  }, http://www.fatberris.com/berri.dk/wp-content/photos/berlin.jpg
+  },
   {
     city: "Berlin", 
     country: "Germany", 
