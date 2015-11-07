@@ -1,5 +1,7 @@
 /*eslint-env node*/
 
+var requestHandlers = require('./requestHandlers');
+
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
@@ -17,6 +19,8 @@ var app = express();
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
+
+app.get('/api/allImages', requestHandlers.getAllImages);
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
