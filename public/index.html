@@ -1,9 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-  <p>Hello, this is instaSpot</p>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    
+  </head>
+  <body ng-app="instaSpotApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">instaSpot</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/place">Place</a></li>
+              <li><a ng-href="#/booking">Booking</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div ng-view=""></div>
+    </div>
+    
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> Triumph in the Sky</p>
+      </div>
+    </div>
+    
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/place.js"></script>
+    <script src="scripts/controllers/booking.js"></script>
+  </body>
 </html>
 
