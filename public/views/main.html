@@ -1,11 +1,3 @@
-<div id="main">
-  <p>This is the main view.</p>
-  <p>hi</p>
-  <ul ng-repeat="tour in tourSpot">
-      <li><img ng-src="{{tour.url}}" class="img-responsive"></img></li>
-  </ul>
-  
+<div class="container-fluid" ng-repeat="tour in tourSpot" ng-click="go(tour.url)">
+  <img ng-src="{{tour.url}}" class="img-responsive center-block"></img></li>
 </div>
-<style type="text/css">
-  
-</style>
