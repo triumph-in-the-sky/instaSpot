@@ -8,6 +8,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
   </head>
   <body ng-app="instaSpotApp">
@@ -16,7 +18,7 @@
     <![endif]-->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="container" ng-controller="NavController">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -32,9 +34,9 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/place">Place</a></li>
-              <li><a ng-href="#/booking">Booking</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/place')}"><a ng-href="#/place">Place</a></li>
+              <li ng-class="{ active: isActive('/booking')}"><a ng-href="#/booking">Booking</a></li>
             </ul>
           </div>
         </div>
@@ -51,6 +53,7 @@
       </div>
     </div>
     
+    <script src="scripts/app.js"></script>
     <script src="scripts/routes.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/place.js"></script>
