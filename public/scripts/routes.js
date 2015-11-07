@@ -1,5 +1,3 @@
-var app = angular.module('instaSpotApp', []);
-
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
