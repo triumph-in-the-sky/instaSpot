@@ -1,6 +1,6 @@
 //Image URLs
 
-var images = 
+module.exports = 
 [
   {
     city: "Paris", 
