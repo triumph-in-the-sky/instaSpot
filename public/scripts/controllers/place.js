@@ -1,11 +1,19 @@
 angular.module('instaSpotApp')
-  .controller('PlaceCtrl', ['$scope', '$http', 'MainFactory', function ($scope, $http, MainFactory) {
+  .controller('PlaceCtrl', ['$scope', '$http', 'MainFactory', '$location', '$window', function ($scope, $http, MainFactory, $location, $window) {
     var city = MainFactory.getCity().city;
     var country = MainFactory.getCity().country;
     var url = '/api/place';
     var currentMainIndex = 0;
     
     $scope.tourSpot = [];
+
+    $scope.back = function(){
+      $location.path('/');
+    };
+
+    $scope.book = function(){
+      $location.path('/booking');
+    };
     
     $scope.update = function(){
       var finalIndex = currentMainIndex + 5;
