@@ -1,10 +1,12 @@
-angular.module('instaSpotApp.mainFactory', [])
+angular.module('instaSpotApp.MainFactory', [])
 
-  .factory('mainFactory', function(){
-    var location;
+  .factory('MainFactory', function(){
+    var location = {};
     return{
-        setCity: function(city, country){
-          location = [city, country];
+        setCity: function(city, country, image){
+          location.city = city;
+          location.country = country;
+          location.image = image;
         },
         getCity: function(){
           return location;
