@@ -1,5 +1,5 @@
 angular.module('instaSpotApp')
-  .controller('MainCtrl', ['$scope', '$window', '$http', '$location', function ($scope, $window, $http, $location) {
+  .controller('MainCtrl', ['$scope', '$window', '$http', '$location', 'mainFactory', function ($scope, $window, $http, $location, mainFactory) {
     var url = '/api/allImages';
     var currentMainIndex = 0;
     
@@ -13,10 +13,10 @@ angular.module('instaSpotApp')
         currentMainIndex++;
         $scope.tourSpot.push(globalVariable.mainViewAllImages[i])
       }
+      console.log($scope.tourSpot);
     }
     
     $scope.tourSpot = [];
-    
     $http.get('/api/allImages')
     .then(function success(response){
       globalVariable.mainViewAllImages = response.data;
@@ -36,7 +36,12 @@ angular.module('instaSpotApp')
         $scope.$apply(function(){ $scope.update(); });
       }
     });
-    $scope.selectPlace = function(){
+    $scope.test = function(city){
+      console.log(1);
+    }
+    $scope.selectPlace = function(city){
+      console.log(city);
+      // mainFactory.setCity(city, country);
       $location.path('/place');
     };
     
