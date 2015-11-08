@@ -100,7 +100,6 @@ exports.getAllImages = function(req, res) {
             var body = JSON.parse(response.body);
             // console.log('response from api', body.data);
             parseApiResponse(body.data, city, country, attraction);
-            console.log('totalNoOfAttractions', totalNoOfAttractions);
             console.log('image list length', imageList.length);
             if (imageList.length === 300) {
               console.log(imageList);
