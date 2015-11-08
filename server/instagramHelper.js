@@ -8,19 +8,19 @@ var destinations = [{
   country: "Hungary",
   attractions: [
      "BudaCastle", 
-     "Fisherman'sBastion", 
-     "St.Stephen'sBasilica", 
+     "FishermansBastion", 
+     "StStephensBasilica", 
      "ChainBridge", 
-     "Heroes'Square"]
+     "HeroesSquare"]
 }, 
 {
- ciy: "Frankfurt",
+ city: "Frankfurt",
  country: "Germany", 
  attractions: [
     "Palmengarten", 
     "StaedelMuseum", 
-    "CathedralofSt.Bartholomew", 
-    "Commerzbank-Arena", 
+    "CathedralofStBartholomew", 
+    "CommerzbankArena", 
     "EisenerSteg", 
     "Kleinmarkthalle",
     "FrankfurtZoo"]
@@ -78,6 +78,8 @@ var destinations = [{
 
 var imageList = [];
 
+var totalNoOfAttractions = 0;
+
 exports.getAllImages = function(req, res) {
   //for each hashtag in hashtag list
   for (var i = 0; i < destinations.length; i++) {
@@ -87,19 +89,30 @@ exports.getAllImages = function(req, res) {
     var attractions = place.attractions;
     for (var j = 0; j < attractions.length; j++) {
       var attraction = attractions[j];
+      totalNoOfAttractions++;
       //make an api call
-      request
-        .get('https://api.instagram.com/v1/tags/' + attraction + '/media/recent?access_token=' + apiKeys.accessToken)
-        .on('response', function(response) {
-          //call parseApiResponse on the api response
-          console.log(response.data);
-          parseApiResponse(response.data, city, country, attraction);
-        });
+      (function(city, country, attraction) {
+        request({
+          method: 'GET', 
+          url:"https://api.instagram.com/v1/tags/" + attraction + "/media/recent",
+          qs: {access_token: '181077755.c2ec312.5558c1a024264f15a7fce236b57fc941', 
+               count: '1'}
+          }, function(error, response, body) {
+            var body = JSON.parse(response.body);
+            // console.log('response from api', body.data);
+            parseApiResponse(body.data, city, country, attraction);
+            console.log('totalNoOfAttractions', totalNoOfAttractions);
+            console.log('image list length', imageList.length);
+            if (imageList.length === 39) {
+              console.log(imageList);
+              res.send(imageList);
+            }
+          });
+      })(city, country, attraction);
+      
     }
   }
-  //return imageList to the client
-  console.log('image list', imageList);
-  res.send(imageList);
+  //return imageList to the client  
 }
 
   //make an api call
@@ -108,7 +121,7 @@ function parseApiResponse(data, city, country, attraction) {
   for (var i = 0; i < data.length; i++) {
     var media = data[i];
     if (media.type === 'image') {
-      console.log('image url', media.images.standard_resolution.url);
+      // console.log('image url', media.images.standard_resolution.url);
       var imageUrl = media.images.standard_resolution.url;
       var imageObject = {
         city: city, 

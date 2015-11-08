@@ -19,6 +19,7 @@ angular.module('instaSpotApp')
     $scope.tourSpot = [];
     $http.get('/api/allImages')
     .then(function success(response){
+      console.log(response.data);
       globalVariable.mainViewAllImages = response.data;
       $scope.update();
     });
