@@ -22,8 +22,22 @@ module.exports = [
   },
   {
     origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-14-2015",
+    time:"1500",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-15-2015",
+    time:"800",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
     destination:"Istanbul, Turkey", 
-    departureDate:"11-2015-2015",
+    departureDate:"11-15-2015",
     time:"1200",
     fair:"1927USD"
   },
@@ -31,6 +45,34 @@ module.exports = [
     origin:"San Francisco, USA",
     destination:"Istanbul, Turkey", 
     departureDate:"11-16-2015",
+    time:"1200",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-17-2015",
+    time:"1200",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-18-2015",
+    time:"1200",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-19-2015",
+    time:"1200",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-20-2015",
     time:"1200",
     fair:"1927USD"
   },
@@ -38,7 +80,7 @@ module.exports = [
     origin:"San Francisco, USA",
     destination:"Shanghai, China", 
     departureDate:"11-14-2015",
-    time:"1200",
+    time:"200",
     fair:"1587USD"
   },
     {
@@ -46,6 +88,20 @@ module.exports = [
     destination:"Shanghai, China", 
     departureDate:"11-16-2015",
     time:"1200",
+    fair:"1487USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Shanghai, China", 
+    departureDate:"11-17-2015",
+    time:"1200",
+    fair:"1487USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Shanghai, China", 
+    departureDate:"11-17-2015",
+    time:"1930",
     fair:"1487USD"
   },
   {
