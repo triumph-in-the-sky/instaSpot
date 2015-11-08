@@ -22,12 +22,6 @@ angular.module('instaSpotApp')
         $scope.tourSpot.push(globalVariable.placeViewAllImages[i])
       }
     }
-    
-    // $http.get(url, {params: {city: city, country: country}})
-      // .then(function success(response){
-        // globalVariable.placeViewAllImages = response.data;
-        // $scope.update();
-      // })
       
     for (var i = 0; i < globalVariable.mainViewAllImages.length; i++){
       if (globalVariable.mainViewAllImages[i].city === city && globalVariable.mainViewAllImages[i].country === country){

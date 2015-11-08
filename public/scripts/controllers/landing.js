@@ -1,5 +1,5 @@
 angular.module('instaSpotApp')
-  .controller('LandingCtrl', function($scope, $location, $window){
+  .controller('LandingCtrl', ['$scope', '$location', '$window', 'MainFactory', function($scope, $location, $window, MainFactory){
 
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
@@ -36,6 +36,13 @@ angular.module('instaSpotApp')
       $('#button_container')[0].style['bottom'] = '3%';
       $('#button_container')[0].style['right'] = '3%';
     };
+    
+    $scope.book = function(destination){
+      MainFactory.setCity(destination.city, destination.country, destination.attraction, destination.url);
+      document.body.style.backgroundImage = "";
+      $location.path('/b');
+      $('body')[0].style['background-color'] = '#3b4b54';
+    };
 
     function populateDestinations() {
       $scope.destinations = [];
@@ -44,12 +51,16 @@ angular.module('instaSpotApp')
         var place = places[i];
         var city = place[0];
         var country = place[1];
+        var attraction = place[2];
+        var image = place[3];
         var destination = {
           city: city, 
-          country: country
+          country: country,
+          attraction: attraction,
+          url: image,
         }
         $scope.destinations.push(destination);
       }
       console.log('wishlist destinations are ', $scope.destinations);
     };
-  })
+  }])
