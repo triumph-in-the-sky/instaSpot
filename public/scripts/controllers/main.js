@@ -1,5 +1,5 @@
 angular.module('instaSpotApp')
-  .controller('MainCtrl', ['$scope', '$window', '$http', function ($scope, $window, $http) {
+  .controller('MainCtrl', ['$scope', '$window', '$http', '$location', function ($scope, $window, $http, $location) {
     var url = '/api/allImages';
     var currentMainIndex = 0;
     
@@ -35,5 +35,8 @@ angular.module('instaSpotApp')
         $scope.$apply(function(){ $scope.update(); });
       }
     });
-      
+    $scope.selectPlace = function(){
+      $location.path('/place');
+    };
+    
   }]);
