@@ -1,5 +1,5 @@
 angular.module('instaSpotApp')
-  .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', function ($scope, MainFactory, $window, $http) {
+  .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', '$location', function ($scope, MainFactory, $window, $http, $location) {
     $scope.location = MainFactory.getCity();
     $scope.date = new Date();
     $scope.flight = [];
@@ -9,8 +9,15 @@ angular.module('instaSpotApp')
       var pack = {data: [[data.city, data.country, data.attraction, data.image]]};
       if (!wishList) {
         $window.localStorage['InstaSpot'] = JSON.stringify(pack);
-      } else {
+      } 
+      else {
         wishList = JSON.parse(wishList);
+        for (var i = 0; i < wishList.data.length; i++){
+          console.log(JSON.stringify(wishList.data[i]), JSON.stringify(pack.data[0]));
+          if (JSON.stringify(wishList.data[i]) === JSON.stringify(pack.data[0])){
+            return;
+          }
+        }
         wishList.data.push(pack.data[0]);
         $window.localStorage['InstaSpot'] = JSON.stringify(wishList);
       }
@@ -18,7 +25,8 @@ angular.module('instaSpotApp')
     (function (){
       $http({
         method: 'GET',
-        url: '/api/flights'
+        url: '/api/flights',
+        params: {longitude: globalVariable.crd.longitude, latitude: globalVariable.crd.latitude}
       }).then(function successCallback(response) {
           // this callback will be called asynchronously
           // when the response is available
@@ -34,5 +42,10 @@ angular.module('instaSpotApp')
           console.log('error');
         });
     })();
+
+      $scope.bookNow = function(){
+        $window.location.href = 'https://mobile.emirates.com/us/english/home.xhtml';
+        $scope.apply();
+      }
 
   }]);

@@ -4,7 +4,6 @@ angular.module('instaSpotApp')
     var country = MainFactory.getCity().country;
     var url = '/api/place';
     var currentMainIndex = 0;
-    globalVariable.placeViewAllImages = [];
     
     $scope.tourSpot = [];
 
@@ -18,17 +17,11 @@ angular.module('instaSpotApp')
     
     $scope.update = function(){
       var finalIndex = currentMainIndex + 5;
-      for (var i = currentMainIndex; i < finalIndex && i < globalVariable.mainViewAllImages.length; i++){
+      for (var i = currentMainIndex; i < finalIndex && i < globalVariable.placeViewAllImages.length; i++){
         currentMainIndex++;
         $scope.tourSpot.push(globalVariable.placeViewAllImages[i])
       }
     }
-    
-    // $http.get(url, {params: {city: city, country: country}})
-      // .then(function success(response){
-        // globalVariable.placeViewAllImages = response.data;
-        // $scope.update();
-      // })
       
     for (var i = 0; i < globalVariable.mainViewAllImages.length; i++){
       if (globalVariable.mainViewAllImages[i].city === city && globalVariable.mainViewAllImages[i].country === country){
@@ -46,7 +39,7 @@ angular.module('instaSpotApp')
       //Change as Necessary. Might not work on every browser
       var height = window.innerHeight,
         currentPosition = document.body.scrollTop,
-        bottom = document.body.offsetHeight;
+        bottom = document.body.scrollHeight;
     
       //Once the scroll position reaches a certain point execute the infinite scroll
       if ((height + currentPosition) >= (bottom - (height / 4))) {
