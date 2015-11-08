@@ -1,7 +1,34 @@
 <div>
   <img src="images/back.png" style="position:fixed;height:30px;top:10px;left:10px;" ng-click="back()">
+  <div class="container-fluid" ng-repeat="tour in tourSpot">
+    <img ng-src="{{tour.url}}" class="image img-responsive center-block" ng-click="selectPlace(tour)"></img>
+  </div>
   <div style="position:fixed;bottom:3%;right:3%">
     <input type="button" value="Fly Me Here" style="font-family:Futura;font-size:20px;border-radius:10px;" ng-click="book()"/>
   </div>
 </div>
+<style>
+  .plane{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 175px;
+  }
+  #instructionTop{
+    margin-top: 150px;
+  }
+  #instructionBottom{
+    margin-bottom: 125px;
+  }
+  .image{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+  }
+  h2{
+    font-family: Futura;
+    color: white;
+  }
+</style>
 
