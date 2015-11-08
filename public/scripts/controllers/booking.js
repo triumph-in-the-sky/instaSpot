@@ -27,7 +27,8 @@ angular.module('instaSpotApp')
     (function (){
       $http({
         method: 'GET',
-        url: '/api/flights'
+        url: '/api/flights',
+        params: {longitude: globalVariable.crd.longitude, latitude: globalVariable.crd.latitude}
       }).then(function successCallback(response) {
           // this callback will be called asynchronously
           // when the response is available
