@@ -7,9 +7,11 @@
   <h4>#{{location.attraction}}</h4>
   <hr>
 </center>
-<div ng-repeat="data in flight">
-  <p>Departure Date: {{data.departureDate}}: {{data.origin}} to {{data.destination}}</p>
-  <p>price: {{data.fair}}</p>
+<div>
+  <p id='flight'>{{flight[0].origin}} to {{flight[0].destination}}</p>
+</div>
+<div ng-repeat="data in flight" id='flights'>
+  <p style='font-weight:bold;padding:0px;'>Departure Date: {{data.departureDate}} . . . . . . {{data.fair}}</p>
 </div>
 <div style='background-color:transparent;height:60px'>
 </div>
@@ -34,5 +36,14 @@
   hr{
     padding:0px;
     margin:0px;
+  }
+  #flights{
+    background-color:white;
+    color:black;
+  }
+  #flight{
+    margin-top:10px;
+    font-size:15px;
+    color:white;
   }
 </style>
