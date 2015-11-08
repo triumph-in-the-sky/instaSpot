@@ -19,8 +19,8 @@ angular.module('instaSpotApp')
     .then(function success(response){
       globalVariable.mainViewAllImages = response.data;
       $scope.update();
-      var coordinates = document.getElementById('divView').childNodes[0].scrollHeight + 75;
-      var durationPlus = 500 / 60;
+      var coordinates = document.getElementById('divView').childNodes[0].scrollHeight + 300;
+      var durationPlus = 600 / 60;
       var duration = 0;
       var lengthPlus = coordinates / 60;
       var length = 0;
