@@ -30,7 +30,7 @@ angular.module('instaSpotApp')
       // })
       
     for (var i = 0; i < globalVariable.mainViewAllImages.length; i++){
-      if (globalVariable.mainViewAllImages[i].city = city && globalVariable.mainViewAllImages[i].country = country){
+      if (globalVariable.mainViewAllImages[i].city === city && globalVariable.mainViewAllImages[i].country === country){
         globalVariable.placeViewAllImages.push(globalVariable.mainViewAllImages[i]);
       }
     }
