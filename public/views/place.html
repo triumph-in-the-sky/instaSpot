@@ -1,8 +1,6 @@
-<div>
-  <h2>This spot is</h2>
-  <h2>{{location.city}}, {{location.country}}</h2>
-  <img ng-src="{{location.image}}" class="image img-responsive center-block"></img>
+<div style="text-align:center">
+  <img src="images/back.png" style="position:fixed;height:30px;top:10px;left:10px;" ng-click="back()">
+  <div style="position:fixed;bottom:3%;right:3%">
+    <input type="button" value="Fly Me Here" style="font-family:Futura;font-size:20px;border-radius:10px;" ng-click="book()"/>
+  </div>
 </div>
-<img src="images/back.png" style="position:fixed;width:60px;bottom:5%;">
-<style>
-</style>
