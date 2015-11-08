@@ -19,10 +19,10 @@ angular.module('instaSpotApp')
       $('body')[0].style['background-color'] = '#3b4b54';
     };
 
-    // $scope.empty = function(){
-    //   $('#button_container')[0].style['text-align'] = 'center';
-    //   $('#button_container')[0].style['margin-top'] = '200px';
-    // };
+    $scope.empty = function(){
+      $('#button_container')[0].style['text-align'] = 'center';
+      $('#button_container')[0].style['margin-top'] = '200px';
+    };
 
     $scope.wish = function(){
       $('#button_container')[0].style['position'] = 'fixed';
@@ -32,7 +32,6 @@ angular.module('instaSpotApp')
 
     function populateDestinations() {
       $scope.destinations = [];
-      // console.log($window.localStorage['InstaSpot']);
       var places = JSON.parse($window.localStorage['InstaSpot']).data;
       for (var i = 0; i < places.length; i++) {
         var place = places[i];
@@ -45,5 +44,5 @@ angular.module('instaSpotApp')
         $scope.destinations.push(destination);
       }
       console.log('wishlist destinations are ', $scope.destinations);
-    }
+    };
   })

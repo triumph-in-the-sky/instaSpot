@@ -1,10 +1,12 @@
 <div id='landing' ng-init='init()'>
-  <div id="wishlist_container" ng-show="wishlist">
-    <h1> Dream Destinations </h1>
-    <ol>
-      <li ng-repeat="destination in destinations"> {{ destination.city }}, {{ destination.country }} </li>
-    </ol>
-  </div>
+  
+
+    <div id="wishlist_container" ng-show="wishlist" style='text-align:center;'>
+      <h1> Dream Destinations </h1>
+      <!-- <ol> -->
+        <li ng-repeat="destination in destinations"> {{ destination.city }}, {{ destination.country }} </li>
+      <!-- </ol> -->
+    </div>
 
   <div id="button_container">
     <input type="button" value="Spot A New Adventure" style="font-family:Futura;font-size:20px;border-radius:10px;" ng-click="start()"/>
@@ -12,17 +14,15 @@
 </div>
 
 <style>
-
-#wishlist_container {
-  width: 400px;
-  margin: 200px;
-  height: 200px;
-  color: white;
-  font-family: Futura;
-  font-size: 28px;
-}
-h1 {
-  font-size: 36px;
-  text-decoration: underline;
-}
+  #wishlist_container {
+    margin-top: 75px;
+    height: 200px;
+    color: white;
+    font-family: Futura;
+    font-size: 25px;
+  }
+  h1 {
+    font-size: 30px;
+    text-decoration: underline;
+  }
 </style>
