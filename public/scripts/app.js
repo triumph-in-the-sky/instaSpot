@@ -1,16 +1,6 @@
 var app = angular.module('instaSpotApp', []);
 
-var globalVariable = {
-  mainViewAllImages : [],
-  mainViewImages : [],
-  placeViewAllImages : [],
-  placeViewImages : []
-}
-
 app.run(function($rootScope, $window, $http){
-  //Handles the logic to infinitely scroll through the app
-  
-  
   
 });
 
