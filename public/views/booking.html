@@ -1,34 +1,36 @@
 
 
 <div style="text-align:center">
-  <h2 >This spot is</h1>
-  <h1 >{{location.city}}, {{location.country}}</h2>
+  <h3 >This spot is</h3>
+  <h2 >{{location.city}}, {{location.country}}</h2>
   <img ng-src="{{location.image}}" style="width:90px">
   <h4>#{{location.attraction}}</h4>
   <hr>
 </center>
-<div>
-  <p id='flight'>{{flight[0].origin}} to {{flight[0].destination}}</p>
-</div>
-<div ng-repeat="data in flight" id='flights'>
-  <p style='font-weight:bold;padding:0px;'>Departure Date: {{data.departureDate}} . . . . . . {{data.fair}}</p>
+<center>
+  <p id='flight' style='margin-top:5px'>{{flight[0].origin}}</p>
+  <img src='images/pointerRed_left.png' style='width:20px;'>
+  <p id='flight'> {{flight[0].destination}}</p>
+</center>
+<div ng-repeat="data in flight" id='flights' ng-init='console.log(data)'>
+  <p style='font-weight:bold;padding:0px;'>Departing {{data.departureDate}} at {{data.time}} for {{data.fair}}</p>
 </div>
 <div style='background-color:transparent;height:60px'>
 </div>
- <input type="button" value="Book Now" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921;position:fixed;bottom:3%;right:5%" ng-click="bookNow()"/>
+  <input type="button" value="Book Now" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921;position:fixed;bottom:3%;right:5%" ng-click="bookNow()"/>
 <div style="position:fixed;bottom:3%;left:5%">
   <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
 </div>
 <style>
-  h2{
-    margin-top: 70px;
+  h3{
+    margin-top:70px;
     color:white;
     padding:0px;
   }
   h4{
     color:#d81921;
   }
-  h1{
+  h2{
     padding:0px;
     margin-top:0px;
     color:white;
@@ -40,10 +42,13 @@
   #flights{
     background-color:white;
     color:black;
+    margin:10px;
+    padding:0px;
   }
   #flight{
-    margin-top:10px;
     font-size:15px;
     color:white;
+    margin:0px;
+    padding:0px;
   }
 </style>
