@@ -58,7 +58,6 @@ var destinations = [{
       "QuartierHabous", 
       "PlayasAinDiabyLaCorniche", 
       "OldMedinaofCasablanca", 
-      "MarcheCentral", 
       "MahkamaduPacha"]
 }, 
 {
