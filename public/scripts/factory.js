@@ -1,6 +1,6 @@
 angular.module('instaSpotApp.MainFactory', [])
 
-  .factory('MainFactory', function(){
+  .factory('MainFactory', function($location){
     var location = {};
     return{
         setCity: function(city, country, attraction, image){
@@ -12,6 +12,9 @@ angular.module('instaSpotApp.MainFactory', [])
         getCity: function(){
           return location;
         },
-        instruction: ''
+        instruction: '',
+        goHome: function(){
+          $location.path('/');
+        }
     }
   })

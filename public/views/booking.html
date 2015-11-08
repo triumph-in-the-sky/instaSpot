@@ -1,7 +1,7 @@
 
 
 
-<center style="position:fixed;">
+<div style="text-align:center">
   <h2 >This spot is</h1>
   <h1 >{{location.city}}, {{location.country}}</h2>
   <img ng-src="{{location.image}}" style="width:90px">
@@ -10,8 +10,9 @@
 </center>
 <div ng-repeat="data in flight">
   <!-- {{flight}} -->
-  <p>date: {{data.origin}} to {{data.desination}}</p>
+  <p>date: {{data.origin}} to {{data.destination}}</p>
   <p>price: {{data.fair}}</p>
+  <button>Book Now</button>
 </div>
 <div style="position:fixed;bottom:3%;right:3%">
   <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
