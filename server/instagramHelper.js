@@ -1,6 +1,7 @@
 var instagram = require('instagram-node').instagram();
 var apiKeys = require('../config');
 var request = require('request');
+var underscore = require('underscore');
 
 //hardcoded destinations
 var destinations = [{
@@ -107,7 +108,8 @@ exports.getAllImages = function(req, res) {
             numAttractionsCovered++;
             console.log('image list length', imageList.length);
             if (numAttractionsCovered === totalNumAttractions) {
-              res.send(imageList);
+              var shuffledImages = underscore.shuffle(imageList);
+              res.send(shuffledImages);
             }
           });
       })(city, country, attraction);

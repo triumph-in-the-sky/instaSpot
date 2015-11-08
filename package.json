@@ -26,6 +26,7 @@
     "cfenv": "1.0.x",
     "express": "4.12.x",
     "instagram-node": "^0.5.8",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "underscore": "^1.8.3"
   }
 }
