@@ -118,4 +118,25 @@ module.exports = [
     time:"1200",
     fair:"1765USD"
   },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-14-2015",
+    time:"1200",
+    fair:"1865USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-15-2015",
+    time:"1200",
+    fair:"1865USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-16-2015",
+    time:"1200",
+    fair:"1865USD"
+  },
 ];
