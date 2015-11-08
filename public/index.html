@@ -18,18 +18,14 @@
     <div class="header" style="position:fixed;width:100%;">
       <div class="navbar navbar-default" role="navigation" style="background-color:#d81921">
           <div class="navbar-header" style="text-align:center;margin:10px;" ng-controller="NavController">
-            <img src="images/logo.png" style="height:35px;">
+            <img src="images/logo.png" style="height:35px;" ng-click="goHome()">
           </div>
       </div>
     </div>
     
-    <div class="container">
-      <div ng-view=""></div>
-    </div>
-    
     <div class="footer">
       <div class="container">
-        <!-- <p><span class="glyphicon glyphicon-heart"></span> Triumph in the Sky</p> -->
+        <div ng-view=""></div>
       </div>
     </div>
     <script src="scripts/factory.js"></script>
