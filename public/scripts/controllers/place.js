@@ -1,4 +1,4 @@
 angular.module('instaSpotApp')
-  .controller('PlaceCtrl', ['$scope', 'mainFactory', function ($scope, mainFactory) {
-    console.log(mainFactory.getCity());
+  .controller('PlaceCtrl', ['$scope', 'MainFactory', function ($scope, MainFactory) {
+    $scope.location = MainFactory.getCity();
   }]);
