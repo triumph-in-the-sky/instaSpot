@@ -1,5 +1,5 @@
 angular.module('instaSpotApp')
-  .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', function ($scope, MainFactory, $window, $http) {
+  .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', '$location', function ($scope, MainFactory, $window, $http, $location) {
     $scope.location = MainFactory.getCity();
     $scope.date = new Date();
     $scope.flight = [];
@@ -42,5 +42,10 @@ angular.module('instaSpotApp')
           console.log('error');
         });
     })();
+
+      $scope.bookNow = function(){
+        $window.location.href = 'https://mobile.emirates.com/us/english/home.xhtml';
+        $scope.apply();
+      }
 
   }]);
