@@ -23,11 +23,17 @@ angular.module('instaSpotApp')
       }
     }
     
-    $http.get(url, {params: {city: city, country: country}})
-      .then(function success(response){
-        globalVariable.placeViewAllImages = response.data;
-        $scope.update();
-      })
+    // $http.get(url, {params: {city: city, country: country}})
+      // .then(function success(response){
+        // globalVariable.placeViewAllImages = response.data;
+        // $scope.update();
+      // })
+      
+    for (var i = 0; i < globalVariable.mainViewAllImages.length; i++){
+      if (globalVariable.mainViewAllImages[i].city = city && globalVariable.mainViewAllImages[i].country = country){
+        globalVariable.placeViewAllImages.push(globalVariable.mainViewAllImages[i]);
+      }
+    }
     
     $scope.location = MainFactory.getCity();
 
