@@ -23,6 +23,7 @@ angular.module('instaSpotApp')
         populateDestinations();
         $scope.wish();
       } else {
+        clearInterval(switchGIFInterval);
         $scope.wishlist = false;
         document.body.style.backgroundImage = "url(../images/emirates.gif)";
         $scope.empty();
@@ -30,7 +31,7 @@ angular.module('instaSpotApp')
     };
 
     $scope.start = function(){
-      switchGIFInterval = null;
+      clearInterval(switchGIFInterval);
       document.body.style.backgroundImage = "";
       $location.path('/m');
       $('body')[0].style['background-color'] = '#3b4b54';
@@ -53,7 +54,7 @@ angular.module('instaSpotApp')
     };
     
     $scope.book = function(destination){
-      switchGIFInterval = null;
+      clearInterval(switchGIFInterval);
       MainFactory.setCity(destination.city, destination.country, destination.attraction, destination.url);
       document.body.style.backgroundImage = "";
       $location.path('/b');
