@@ -1,15 +1,17 @@
 angular.module('instaSpotApp')
   .controller('LandingCtrl', function($scope, $location, $window){
+
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
       $scope.wish();
       if ($window.localStorage['InstaSpot']) {
-        console.log('wishlist exists');
         $scope.wishlist = true;
         populateDestinations();
+        $scope.wish();
       } else {
         $scope.wishlist = false;
         document.body.style.backgroundImage = "url(../images/emirates.gif)";
+        $scope.empty();
       }
     };
 
@@ -20,11 +22,16 @@ angular.module('instaSpotApp')
     };
 
     $scope.empty = function(){
+      $scope.buttonVal = 'Spot Your Destination';
+      $('#button_container')[0].style['position'] = 'static';
+      $('#button_container')[0].style['bottom'] = '';
+      $('#button_container')[0].style['right'] = '';
       $('#button_container')[0].style['text-align'] = 'center';
       $('#button_container')[0].style['margin-top'] = '200px';
     };
 
     $scope.wish = function(){
+      $scope.buttonVal = 'Spot A New Destination';
       $('#button_container')[0].style['position'] = 'fixed';
       $('#button_container')[0].style['bottom'] = '3%';
       $('#button_container')[0].style['right'] = '3%';
