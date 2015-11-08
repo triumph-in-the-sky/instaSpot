@@ -14,6 +14,7 @@ angular.module('instaSpotApp')
     };
 
     $scope.start = function(){
+      document.body.style.backgroundImage = "";
       $location.path('/m');
       $('body')[0].style['background-color'] = '#3b4b54';
     };
