@@ -9,9 +9,7 @@ angular.module('instaSpotApp')
       if (!wishList) {
         $window.localStorage['InstaSpot'] = JSON.stringify(pack);
       } else {
-        console.log(wishList);
         wishList = JSON.parse(wishList);
-        console.log(wishList);
         wishList.data.push(pack.data[0]);
         $window.localStorage['InstaSpot'] = JSON.stringify(wishList);
       }
