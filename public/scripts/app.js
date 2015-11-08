@@ -1,20 +1,20 @@
 var app = angular.module('instaSpotApp', []);
 
-app.run(function($rootScope, $window){
-  $rootScope.name = 'Scope Name';
+var globalVariable = {
+  mainViewAllImages : [],
+  mainViewImages : [],
+  placeViewAllImages : [],
+  placeViewImages : []
+}
+
+app.run(function($rootScope, $window, $http){
+  //Handles the logic to infinitely scroll through the app
   
-  angular.element($window).bind("scroll", function() {
-    // Change as Necessary. Might not work on every browser //
-    var height = window.innerHeight,
-        currentPosition = document.body.scrollTop,
-        bottom = document.body.offsetHeight;
-    //////////////////////////////////////////////////////////
-    if ((height + currentPosition) >= bottom) {
-      //TODO
-    }
-  });
+  
+  
 });
 
+//Changes active state for the navigation bar
 app.controller('NavController', function($scope, $location){ 
   $scope.isActive = function (viewLocation) { 
     return viewLocation === $location.path();
