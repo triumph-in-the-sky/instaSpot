@@ -8,11 +8,11 @@ angular.module('instaSpotApp')
     $scope.tourSpot = [];
 
     $scope.back = function(){
-      $location.path('/');
+      $location.path('/m');
     };
 
     $scope.book = function(){
-      $location.path('/booking');
+      $location.path('/b');
     };
     
     $scope.update = function(){
