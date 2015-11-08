@@ -71,7 +71,7 @@ var destinations = [{
       "BeirutSouks", 
       "BeiteddinePalace", 
       "BekaaValley", 
-      "HamraStreet", 
+      // "HamraStreet", 
       "Harissa"
   ]
 }];
