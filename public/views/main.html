@@ -1,0 +1,30 @@
+<center><h2 id="instructionTop" >scroll down</h2>
+<h2 id="instructionBottom">to begin</h2>
+<img ng-src="../images/pointer.png" class="plane img-responsive" ></img></center> 
+<div class="container-fluid" ng-repeat="tour in tourSpot">
+  <img ng-src="{{tour.url}}" class="image img-responsive center-block" ng-click="selectPlace(tour)"></img>
+</div>
+<style>
+  .plane{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 175px;
+  }
+  #instructionTop{
+    margin-top: 150px;
+  }
+  #instructionBottom{
+    margin-bottom: 125px;
+  }
+  .image{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+  }
+  h2{
+    font-family: Futura;
+    color: white;
+  }
+</style>
