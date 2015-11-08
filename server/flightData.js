@@ -1,32 +1,80 @@
-module.exports = {
-  "FlightAvailabilityList": [
-    {
-      "FlightNo": "EK542",
-      "FlightDateTime": "23:12",
-      "FlightDate":"",
-      "Sector": "Commercial Asia",
-      "TransitsStations": {
-        "TransitsStation": [
-          "Doha"
-        ]
-      },
-      "Duration": "12h",
-      "FlightFare": "1000AED",
-      "Currency": "AED"
-    },
-    {
-      "FlightNo": "EK545",
-      "FlightDateTime": "09:12",
-      "FlightDate":"",
-      "Sector": "Commercial Asia",
-      "TransitsStations": {
-        "TransitsStation": [
-          ""
-        ]
-      },
-      "Duration": "12h",
-      "FlightFare": "1200AED",
-      "Currency": "AED"
-    }
-  ]
-};
+module.exports = [
+  {
+    origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-12-2015",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-13-2015",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-14-2015",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-2015-2015",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Istanbul, Turkey", 
+    departureDate:"11-16-2015",
+    fair:"1927USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Shanghai, China", 
+    departureDate:"11-14-2015",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Budapest, Hungary", 
+    departureDate:"11-12-2015",
+    fair:"1587USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-13-2015",
+    fair:"1765USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-14-2015",
+    fair:"1765USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Casablanca, Morroco", 
+    departureDate:"11-15-2015",
+    fair:"1765USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Beirut, Lebanon", 
+    departureDate:"11-12-2015",
+    fair:"1765USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Beirut, Lebanon", 
+    departureDate:"11-13-2015",
+    fair:"1765USD"
+  },
+  {
+    origin:"San Francisco, USA",
+    destination:"Beirut, Lebanon", 
+    departureDate:"11-15-2015",
+    fair:"1765USD"
+  },
+];
