@@ -22,8 +22,10 @@
     "url": "https://github.com/triumph-in-the-sky/instaSpot/issues"
   },
   "homepage": "https://github.com/triumph-in-the-sky/instaSpot/#readme",
-	"dependencies": {
-		"express": "4.12.x",
-		"cfenv": "1.0.x"
-	}
+  "dependencies": {
+    "cfenv": "1.0.x",
+    "express": "4.12.x",
+    "instagram-node": "^0.5.8",
+    "request": "^2.65.0"
+  }
 }
