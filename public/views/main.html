@@ -1,3 +1,12 @@
-<div class="container-fluid" ng-repeat="tour in tourSpot" ng-click="go(tour.url)">
-  <img ng-src="{{tour.url}}" class="img-responsive center-block"></img></li>
+<center><h2>Scroll down</h2>
+<h2>to begin</h2>
+<img ng-src="../images/pointer.png" class="plane img-responsive" ></img></center> 
+<div class="container-fluid" ng-repeat="tour in tourSpot">
+  <img ng-src="{{tour.url}}" class="image img-responsive center-block"></img></li>
 </div>
+<style>
+  .plane{
+    width: 50%;
+    height: 50%
+  }
+</style>
