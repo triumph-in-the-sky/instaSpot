@@ -9,5 +9,9 @@ module.exports = {
     apiUtils.getDestinations(function(data){
       res.send(data);
     })
+  },
+  getImagesFromPlace:function(req, res){
+    //your code here
+    res.send(200);
   }
 };
