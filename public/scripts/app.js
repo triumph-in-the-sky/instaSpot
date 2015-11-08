@@ -1,4 +1,4 @@
-var app = angular.module('instaSpotApp', []);
+var app = angular.module('instaSpotApp', ['instaSpotApp.mainFactory']);
 
 app.run(function($rootScope, $window, $http){
   
