@@ -39,7 +39,7 @@ angular.module('instaSpotApp')
     });
     
     $scope.selectPlace = function(tour){
-      MainFactory.setCity(tour.city, tour.country, tour.url);
+      MainFactory.setCity(tour.city, tour.country, tour.attraction, tour.url);
       $location.path('/p');
     };
     

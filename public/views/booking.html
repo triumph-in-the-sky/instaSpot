@@ -1,10 +1,13 @@
 <div>
   <h2>This spot is</h2>
   <h2>{{location.city}}, {{location.country}}</h2>
-  <img ng-src="{{location.image}}" class="image img-responsive center-block" id="selectedImg"></img>
+  <img ng-src="{{location.image}}" class="image img-responsive center-block" id="selectedImg">
+  <h4>{{location.attraction}}</h4>
   <hr>
 </div>
-
+<div style="position:fixed;bottom:3%;right:3%">
+    <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;" ng-click="save()"/>
+  </div>
 <style>
    
 </style>
