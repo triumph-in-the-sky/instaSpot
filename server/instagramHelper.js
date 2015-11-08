@@ -49,18 +49,17 @@ var destinations = [{
       "HuangpuRiver", 
       "RiversidePromenade"]
 }, 
-{
-  city: "Casablana",
-  country: "Morocco", 
-  attractions: [
-      "HassanIIMosque", 
-      "MuseeAbderrahmanSlaoui", 
-      "QuartierHabous", 
-      "PlayasAinDiabyLaCorniche", 
-      "OldMedinaofCasablanca", 
-      "MarcheCentral", 
-      "MahkamaduPacha"]
-}, 
+// {
+//   city: "Casablana",
+//   country: "Morocco", 
+//   attractions: [
+//       "HassanIIMosque", 
+//       "MuseeAbderrahmanSlaoui", 
+//       "QuartierHabous", 
+//       "PlayasAinDiabyLaCorniche", 
+//       "OldMedinaofCasablanca", 
+//       "MahkamaduPacha"]
+// }, 
 {
   city: "Beirut",
   country: "Lebanon", 
