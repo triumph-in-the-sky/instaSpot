@@ -77,10 +77,13 @@ var destinations = [{
 }];
 
 var imageList = [];
-
+var totalNumAttractions = 0;
+var numAttractionsCovered = 0;
 
 exports.getAllImages = function(req, res) {
   imageList = [];
+  totalNumAttractions = 0;
+  numAttractionsCovered = 0;
   //for each hashtag in hashtag list
   for (var i = 0; i < destinations.length; i++) {
     var place = destinations[i];
@@ -89,6 +92,7 @@ exports.getAllImages = function(req, res) {
     var attractions = place.attractions;
     for (var j = 0; j < attractions.length; j++) {
       var attraction = attractions[j];
+      totalNumAttractions++;
       //make an api call
       (function(city, country, attraction) {
         request({
@@ -100,9 +104,9 @@ exports.getAllImages = function(req, res) {
             var body = JSON.parse(response.body);
             // console.log('response from api', body.data);
             parseApiResponse(body.data, city, country, attraction);
+            numAttractionsCovered++;
             console.log('image list length', imageList.length);
-            if (imageList.length > 300) {
-              console.log(imageList);
+            if (numAttractionsCovered === totalNumAttractions) {
               res.send(imageList);
             }
           });
