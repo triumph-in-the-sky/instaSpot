@@ -9,6 +9,7 @@ angular.module('instaSpotApp')
         populateDestinations();
       } else {
         $scope.wishlist = false;
+        document.body.style.backgroundImage = "url(../images/emirates.gif)";
       }
     };
 
