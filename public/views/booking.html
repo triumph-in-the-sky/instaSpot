@@ -12,9 +12,10 @@
   <p>Departure Date: {{data.departureDate}}: {{data.origin}} to {{data.destination}}</p>
   <p>price: {{data.fair}}</p>
 </div>
-<hr>
-  <button ng-click="bookNow()">Book Now</button>
-<div style="position:fixed;bottom:3%;right:3%">
+<div style='background-color:transparent;height:60px'>
+</div>
+ <input type="button" value="Book Now" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921;position:fixed;bottom:3%;right:5%" ng-click="bookNow()"/>
+<div style="position:fixed;bottom:3%;left:5%">
   <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
 </div>
 <style>
