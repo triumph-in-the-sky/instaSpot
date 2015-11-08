@@ -1,7 +1,10 @@
 /*eslint-env node*/
 
+<<<<<<< HEAD
 var requestHandlers = require('./server/requestHandlers');
 
+=======
+>>>>>>> 7eee6f717eaac921f43220cdc2eec147650d81c0
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
