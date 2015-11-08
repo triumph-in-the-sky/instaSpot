@@ -23,6 +23,7 @@ angular.module('instaSpotApp')
       $scope.update();
     })
     
+    //Handles the logic to infinitely scroll through the app
     angular.element($window).bind("scroll", function() {
     
       //Change as Necessary. Might not work on every browser
@@ -31,7 +32,7 @@ angular.module('instaSpotApp')
         bottom = document.body.offsetHeight;
     
       //Once the scroll position reaches a certain point execute the infinite scroll
-      if ((height + currentPosition) >= (bottom - (height/4))) {
+      if ((height + currentPosition) >= (bottom - (height / 4))) {
         $scope.$apply(function(){ $scope.update(); });
       }
     });
