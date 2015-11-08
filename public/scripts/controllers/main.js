@@ -21,7 +21,7 @@ angular.module('instaSpotApp')
     .then(function success(response){
       globalVariable.mainViewAllImages = response.data;
       $scope.update();
-    })
+    });
     
     angular.element($window).bind("scroll", function() {
     
