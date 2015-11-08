@@ -2,7 +2,7 @@ angular.module('instaSpotApp')
   .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', function ($scope, MainFactory, $window, $http) {
     $scope.location = MainFactory.getCity();
     $scope.date = new Date();
-    $scope.flight;
+    $scope.flight = [];
     $scope.save = function(){
       var wishList = $window.localStorage['InstaSpot'];
       var data = MainFactory.getCity();
@@ -10,9 +10,7 @@ angular.module('instaSpotApp')
       if (!wishList) {
         $window.localStorage['InstaSpot'] = JSON.stringify(pack);
       } else {
-        console.log(wishList);
         wishList = JSON.parse(wishList);
-        console.log(wishList);
         wishList.data.push(pack.data[0]);
         $window.localStorage['InstaSpot'] = JSON.stringify(wishList);
       }
@@ -25,9 +23,15 @@ angular.module('instaSpotApp')
           // this callback will be called asynchronously
           // when the response is available
           console.log(response, 'response');
+          for(var i = 0; i < response.data.length; i++){
+            var desination = response.data[i].destination.split(", ");
+            if(desination[0] === $scope.location.city && desination[1] === $scope.location.country){
+              $scope.flight.push(response.data[i]);
+              console.log($scope.flight, 'flight');
+            }
+          }
         }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+          console.log('error');
         });
     })();
 

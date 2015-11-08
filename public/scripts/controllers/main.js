@@ -13,13 +13,11 @@ angular.module('instaSpotApp')
         currentMainIndex++;
         $scope.tourSpot.push(globalVariable.mainViewAllImages[i])
       }
-      console.log($scope.tourSpot);
     }
     
     $scope.tourSpot = [];
     $http.get('/api/allImages')
     .then(function success(response){
-      console.log(response.data);
       globalVariable.mainViewAllImages = response.data;
       $scope.update();
     });
