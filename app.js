@@ -31,6 +31,9 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/api/allImages', instagramHelper.getAllImages);
 
+app.get('/api/flights', requestHandlers.getAllDestinations);
+app.get('/api/place', requestHandlers.getImagesFromPlace);
+
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 

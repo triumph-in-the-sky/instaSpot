@@ -10,6 +10,7 @@ angular.module('instaSpotApp.MainFactory', [])
         },
         getCity: function(){
           return location;
-        }
+        },
+        instruction: ''
     }
   })
