@@ -1,6 +1,6 @@
 angular.module('instaSpotApp')
   .controller('LandingCtrl', ['$scope', '$location', '$window', 'MainFactory', function($scope, $location, $window, MainFactory){
-    var switchGIFInterval;
+    var switchGIFInteval;
     
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
@@ -31,7 +31,11 @@ angular.module('instaSpotApp')
     };
 
     $scope.start = function(){
+<<<<<<< Updated upstream
       clearInterval(switchGIFInterval);
+=======
+      switchGIFInterval = null;
+>>>>>>> Stashed changes
       document.body.style.backgroundImage = "";
       $location.path('/m');
       $('body')[0].style['background-color'] = '#3b4b54';

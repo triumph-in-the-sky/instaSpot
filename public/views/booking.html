@@ -9,10 +9,11 @@
   <hr>
 </center>
 <div ng-repeat="data in flight">
-  <!-- {{flight}} -->
-  <p>date: {{data.origin}} to {{data.destination}}</p>
+  <p>Departure Date: {{data.departureDate}}: {{data.origin}} to {{data.destination}}</p>
   <p>price: {{data.fair}}</p>
-  <button on-click="bookNow()">Book Now</button>
+  <form>
+    <button ng-click="bookNow()">Book Now</button>
+  </form>
 </div>
 <div style="position:fixed;bottom:3%;right:3%">
   <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
