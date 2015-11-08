@@ -1,12 +1,10 @@
 angular.module('instaSpotApp')
   .controller('BookingCtrl', ['$scope', 'MainFactory', '$window', '$http', function ($scope, MainFactory, $window, $http) {
     $scope.location = MainFactory.getCity();
-    console.log($scope.location);
     $scope.date = new Date();
     $scope.flight = [];
     $scope.save = function(){
       var wishList = $window.localStorage['InstaSpot'];
-      console.log(wishList);
       var data = MainFactory.getCity();
       var pack = {data: [[data.city, data.country, data.attraction, data.image]]};
       if (!wishList) {

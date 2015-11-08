@@ -1,6 +1,6 @@
 angular.module('instaSpotApp')
   .controller('LandingCtrl', ['$scope', '$location', '$window', 'MainFactory', function($scope, $location, $window, MainFactory){
-    var switchGIFInteval;
+    var switchGIFInterval;
     
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
