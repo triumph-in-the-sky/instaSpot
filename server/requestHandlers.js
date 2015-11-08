@@ -16,6 +16,7 @@ module.exports = {
     res.send(200);
   }, 
   getFlights:function(req, res){
+    //use req.query to access longitude and latitude
     res.send(flightData.filter(function(){
       return true;
     }))
