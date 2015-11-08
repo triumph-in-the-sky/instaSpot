@@ -4,6 +4,7 @@ angular.module('instaSpotApp')
     var country = MainFactory.getCity().country;
     var url = '/api/place';
     var currentMainIndex = 0;
+    globalVariable.placeViewAllImages = [];
     
     $scope.tourSpot = [];
 
@@ -33,6 +34,7 @@ angular.module('instaSpotApp')
       if (globalVariable.mainViewAllImages[i].city === city && globalVariable.mainViewAllImages[i].country === country){
         globalVariable.placeViewAllImages.push(globalVariable.mainViewAllImages[i]);
       }
+      globalVariable.placeViewAllImages = shuffle(globalVariable.placeViewAllImages);
     }
     
     $scope.location = MainFactory.getCity();
@@ -52,3 +54,8 @@ angular.module('instaSpotApp')
       }
     });
   }]);
+  
+function shuffle(o){
+  for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+  return o;
+}

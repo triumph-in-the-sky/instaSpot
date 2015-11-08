@@ -1,13 +1,32 @@
-<div>
-  <h2>This spot is</h2>
-  <h2>{{location.city}}, {{location.country}}</h2>
-  <img ng-src="{{location.image}}" class="image img-responsive center-block" id="selectedImg">
-  <h4>{{location.attraction}}</h4>
+
+
+
+<center style="position:fixed;">
+  <h2 >This spot is</h1>
+  <h1 >{{location.city}}, {{location.country}}</h2>
+  <img ng-src="{{location.image}}" style="width:90px">
+  <h4>#{{location.attraction}}</h4>
   <hr>
-</div>
+</center>
 <div style="position:fixed;bottom:3%;right:3%">
-    <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;" ng-click="save()"/>
+    <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
   </div>
 <style>
-   
+  h2{
+    margin-top: 70px;
+    color:white;
+    padding:0px;
+  }
+  h4{
+    color:#d81921;
+  }
+  h1{
+    padding:0px;
+    margin-top:0px;
+    color:white;
+  }
+  hr{
+    padding:0px;
+    margin:0px;
+  }
 </style>
