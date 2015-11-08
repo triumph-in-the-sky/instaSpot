@@ -1,10 +1,24 @@
 angular.module('instaSpotApp')
   .controller('LandingCtrl', ['$scope', '$location', '$window', 'MainFactory', function($scope, $location, $window, MainFactory){
-
+    var switchGIFInteval;
+    
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
       $scope.wish();
+      
+      var switchGIF = {
+        0 : "url(../images/travel.gif)",
+        1 : "url(../images/dubai.gif)",
+        2 : "url(../images/dubai2.gif)",
+        3 : "url(../images/explore.gif)"
+      }
+      
       if ($window.localStorage['InstaSpot']) {
+        document.body.style.backgroundImage = "url(../images/travel.gif)";
+        switchGIFInterval = setInterval(function(){
+          var random = Math.floor(Math.random() * 4);
+          document.body.style.backgroundImage = switchGIF[random];
+        }, 5000)
         $scope.wishlist = true;
         populateDestinations();
         $scope.wish();
@@ -16,6 +30,7 @@ angular.module('instaSpotApp')
     };
 
     $scope.start = function(){
+      switchGIFInterval = null;
       document.body.style.backgroundImage = "";
       $location.path('/m');
       $('body')[0].style['background-color'] = '#3b4b54';
@@ -38,6 +53,7 @@ angular.module('instaSpotApp')
     };
     
     $scope.book = function(destination){
+      switchGIFInterval = null;
       MainFactory.setCity(destination.city, destination.country, destination.attraction, destination.url);
       document.body.style.backgroundImage = "";
       $location.path('/b');
