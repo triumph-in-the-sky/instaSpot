@@ -11,10 +11,9 @@
 <div ng-repeat="data in flight">
   <p>Departure Date: {{data.departureDate}}: {{data.origin}} to {{data.destination}}</p>
   <p>price: {{data.fair}}</p>
-  <form>
-    <button ng-click="bookNow()">Book Now</button>
-  </form>
 </div>
+<hr>
+  <button ng-click="bookNow()">Book Now</button>
 <div style="position:fixed;bottom:3%;right:3%">
   <input type="button" value="Add To Wish List" style="font-family:Futura;font-size:20px;border-radius:10px;color:white;background-color:#d81921" ng-click="save()"/>
 </div>

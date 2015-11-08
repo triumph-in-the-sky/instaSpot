@@ -1,6 +1,6 @@
 angular.module('instaSpotApp')
   .controller('LandingCtrl', ['$scope', '$location', '$window', 'MainFactory', function($scope, $location, $window, MainFactory){
-    var switchGIFInteval;
+    var switchGIFInterval;
     
     $scope.init = function(){
       $('body')[0].style['background-color'] = '#d81921';
@@ -8,7 +8,7 @@ angular.module('instaSpotApp')
       
       var switchGIF = {
         0 : "url(../images/travel.gif)",
-        1 : "url(../images/dubai.gif)",
+        1 : "url(../backgroundImages/dubai.gif)",
         2 : "url(../images/dubai2.gif)",
         3 : "url(../images/explore.gif)"
       }
@@ -16,7 +16,7 @@ angular.module('instaSpotApp')
       if ($window.localStorage['InstaSpot']) {
         document.body.style.backgroundImage = "url(../images/travel.gif)";
         switchGIFInterval = setInterval(function(){
-          var random = Math.floor(Math.random() * 4);
+          var random = xpMath.floor(Math.random() * 4);
           document.body.style.backgroundImage = switchGIF[random];
         }, 5000)
         $scope.wishlist = true;
@@ -31,11 +31,7 @@ angular.module('instaSpotApp')
     };
 
     $scope.start = function(){
-<<<<<<< Updated upstream
       clearInterval(switchGIFInterval);
-=======
-      switchGIFInterval = null;
->>>>>>> Stashed changes
       document.body.style.backgroundImage = "";
       $location.path('/m');
       $('body')[0].style['background-color'] = '#3b4b54';
