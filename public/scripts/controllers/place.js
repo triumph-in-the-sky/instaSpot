@@ -4,6 +4,7 @@ angular.module('instaSpotApp')
     var country = MainFactory.getCity().country;
     var url = '/api/place';
     var currentMainIndex = 0;
+    globalVariable.placeViewAllImages = [];
     
     $scope.tourSpot = [];
 
