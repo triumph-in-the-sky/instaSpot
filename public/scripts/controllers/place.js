@@ -22,6 +22,7 @@ angular.module('instaSpotApp')
       })
     
     $scope.location = MainFactory.getCity();
+
     
     //Handles the logic to infinitely scroll through the app
     angular.element($window).bind("scroll", function() {
@@ -36,6 +37,4 @@ angular.module('instaSpotApp')
         $scope.$apply(function(){ $scope.update(); });
       }
     });
-    
-    
   }]);
