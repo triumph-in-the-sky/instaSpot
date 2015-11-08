@@ -100,13 +100,13 @@ exports.getAllImages = function(req, res) {
           method: 'GET', 
           url:"https://api.instagram.com/v1/tags/" + attraction + "/media/recent",
           qs: {access_token: '181077755.c2ec312.5558c1a024264f15a7fce236b57fc941', 
-               count: '10'}
+               count: '15'}
           }, function(error, response, body) {
             var body = JSON.parse(response.body);
-            // console.log('response from api', body.data);
+
             parseApiResponse(body.data, city, country, attraction);
             numAttractionsCovered++;
-            console.log('image list length', imageList.length);
+
             if (numAttractionsCovered === totalNumAttractions) {
               var shuffledImages = underscore.shuffle(imageList);
               res.send(shuffledImages);
@@ -125,7 +125,6 @@ function parseApiResponse(data, city, country, attraction) {
   for (var i = 0; i < data.length; i++) {
     var media = data[i];
     if (media.type === 'image') {
-      // console.log('image url', media.images.standard_resolution.url);
       var imageUrl = media.images.standard_resolution.url;
       var imageObject = {
         city: city, 
