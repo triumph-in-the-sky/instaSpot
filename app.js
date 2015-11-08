@@ -20,7 +20,9 @@ var app = express();
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
+
 app.get('/api/allImages', requestHandlers.getAllImages);
+app.get('/api/flights', requestHandlers.getAllDestinations);
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
